@@ -1,11 +1,18 @@
 <?php 
 
-function load_view($page) {
+function load_view($page, $data = null) {
 	$file = load_config("app.view_folder") . $page . ".php";
 
 	if(file_exists($file)) {
+		ob_start();
+		if($data != null) {
+			extract($data);
+		}
 		require $file;
+		return ob_get_clean();
+	
 	} else {
+
 		echo "404 Not Found!";
 	}	
 }

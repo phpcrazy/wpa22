@@ -3,6 +3,7 @@
 define("DD" , __DIR__ . "/..");
 
 require DD . "/wpa22/functions.php";
+require DD . "/app/controller/controllers.php";
 
 if(isset($_GET['page'])) {
 	$page = $_GET['page'];
@@ -10,8 +11,16 @@ if(isset($_GET['page'])) {
 	$page = "home";
 }
 
+$routes = include DD . "/app/routes.php";
 
-load_view($page);
+if(array_key_exists($page, $routes)) {
+	call_user_func($routes[$page]);
+} else {
+	echo "404!";
+}
+
+
+
 
 
 
