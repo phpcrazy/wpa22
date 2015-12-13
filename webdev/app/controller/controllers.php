@@ -8,7 +8,8 @@ function HomeController() {
 	echo load_view("home", $data);
 }
 
-function BlogController() {
+function BlogController($id) {
+	echo $id;
 	echo load_view("blog");
 }
 
