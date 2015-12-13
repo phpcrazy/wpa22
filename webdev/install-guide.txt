@@ -1,0 +1,35 @@
+sudo apt-get update
+sudo apt-get install tasksel
+sudo tasksel
+
+--- choose LAMP Server
+--- MySQL Password - 12345
+
+
+// to install curl
+sudo apt-get install curl
+
+// to install composer
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+// to install git
+sudo apt-get install git
+
+// to install virtualhost
+https://github.com/RoverWire/virtualhost
+
+cd /usr/local/bin
+wget -O virtualhost https://raw.githubusercontent.com/RoverWire/virtualhost/master/virtualhost.sh
+chmod +x virtualhost
+
+cd
+mkdir code
+cd code
+mkdir wpa22
+sudo virtualhost create wpa22.site ~/code/wpa22/public
+
+wpa22.site
+
+sudo a2enmod rewrite
+sudo service apache2 restart
