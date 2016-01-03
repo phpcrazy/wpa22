@@ -6,5 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Config' => $baseDir . '/wpa22/provider/Config.php',
     'DB' => $baseDir . '/wpa22/provider/DB.php',
+    'DBR' => $baseDir . '/wpa22/provider/DBR.php',
+    'DBSingleton' => $baseDir . '/wpa22/provider/DBSingleton.php',
+    'DBW' => $baseDir . '/wpa22/provider/DBW.php',
+    'Seeder' => $baseDir . '/app/tester/Seeder.php',
+    'TestAnother' => $baseDir . '/app/tester/TestAnother.php',
+    'TraitPattern' => $baseDir . '/app/tester/TraitPattern.php',
+    'UsePattern' => $baseDir . '/app/tester/UsePattern.php',
 );

@@ -1,7 +1,8 @@
 {
   "autoload": {
     "classmap": [
-      "wpa22/provider"
+      "wpa22/provider",
+      "app/tester"
     ]
   }
 }

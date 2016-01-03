@@ -18,11 +18,21 @@ require DD . "/vendor/autoload.php";
 // Method Chain
 
 
-$students = DB::table("students")->get();
-$student = DB::table("students")->where("id", "=", 1)->get();
+DBR::table("students")->get();
+DBW::table("classes")->get();
+
+// $usePattern = new UsePattern();
+
+// $usePattern->testAnother();
+// $usePattern->test();
+// $usePattern->seeder();
 
 
-var_dump($students);
-var_dump($student);
+// $students = DB::table("students")->get();
+// $student = DB::table("students")->where("id", "=", 1)->get();
+
+
+// var_dump($students);
+// var_dump($student);
 
 
