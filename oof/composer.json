@@ -1,5 +1,8 @@
 {
   "autoload": {
+    "psr-4": {
+      "Wpa22\\": "wpa22/src"
+    },
     "classmap": [
       "wpa22/provider",
       "app/tester"

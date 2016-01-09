@@ -6,10 +6,47 @@
  * Time: 9:49 AM
  */
 
-
 define("DD", realpath( __DIR__ . "/.."));
-
 require DD . "/vendor/autoload.php";
+
+
+use Wpa22\App\Application;
+
+
+
+class Dog {
+    public function __construct()
+    {
+        echo "Dog class created";
+    }
+
+    public function __destruct()
+    {
+        // TODO: Implement __destruct() method.
+        echo "Dog Destructor!";
+    }
+
+    public function bark() {
+        echo "Woof!";
+        echo "Woof!";
+    }
+}
+
+$dog = new Dog();
+
+Application::add($dog, "puppy");
+
+try {
+    Application::add($dog, "puppy");
+} catch(Exception $e) {
+    trigger_error("Object can't added", E_USER_ERROR);
+}
+
+$another = Application::get("puppy");
+$another->bark();
+
+$next = Application::get("puppy");
+$next->bark();
 
 
 // Only one object
@@ -18,8 +55,10 @@ require DD . "/vendor/autoload.php";
 // Method Chain
 
 
-DBR::table("students")->get();
-DBW::table("classes")->get();
+// $students = DBR::table("students")->get();
+
+// var_dump($students);
+
 
 // $usePattern = new UsePattern();
 

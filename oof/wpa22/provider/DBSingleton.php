@@ -18,7 +18,10 @@ trait DBSingleton {
 	}
 
 	public function get() {
-		echo $this->table_name;
+		$sql = "SELECT * FROM " . $this->table_name;
+
+		$query = $this->query($sql);
+		return $query->fetchAll();
 	}
 }
 
