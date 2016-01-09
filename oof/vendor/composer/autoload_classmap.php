@@ -11,6 +11,7 @@ return array(
     'DBR' => $baseDir . '/wpa22/provider/DBR.php',
     'DBSingleton' => $baseDir . '/wpa22/provider/DBSingleton.php',
     'DBW' => $baseDir . '/wpa22/provider/DBW.php',
+    'LogInterface' => $baseDir . '/wpa22/interface/LogInterface.php',
     'Seeder' => $baseDir . '/app/tester/Seeder.php',
     'TestAnother' => $baseDir . '/app/tester/TestAnother.php',
     'TraitPattern' => $baseDir . '/app/tester/TraitPattern.php',

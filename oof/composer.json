@@ -5,6 +5,7 @@
     },
     "classmap": [
       "wpa22/provider",
+      "wpa22/interface",
       "app/tester"
     ]
   }

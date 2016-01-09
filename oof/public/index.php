@@ -10,6 +10,23 @@ define("DD", realpath( __DIR__ . "/.."));
 require DD . "/vendor/autoload.php";
 
 
+use Wpa22\Core\Application as CoreApp;
+
+$log = new CoreApp();
+
+$mysqllog = $log->getLog('mysql', ["root", "", "another"]);
+
+$mysqllog->write();
+
+$filelog = $log->getLog("file", ['test']);
+$filelog->write();
+
+
+
+
+
+die();
+
 use Wpa22\App\Application;
 
 
