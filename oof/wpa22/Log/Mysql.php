@@ -31,25 +31,25 @@ class Log_Mysql implements LogInterface
         echo "Destruct MySQL <br/>";
     }
 
-
-    public function write()
+    public function write($key, $value)
     {
         // TODO: Implement write() method.
-        echo "Write";
     }
 
-    public function read()
+    public function read($key)
     {
         // TODO: Implement read() method.
     }
 
-    public function contain()
+    public function contain($key)
     {
         // TODO: Implement contain() method.
     }
 
-    public function remove()
+    public function remove($key)
     {
         // TODO: Implement remove() method.
     }
+
+
 }

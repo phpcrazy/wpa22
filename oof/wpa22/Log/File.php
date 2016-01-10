@@ -7,38 +7,52 @@
  */
 
 class Log_File implements LogInterface{
+
+    private $log_file_location = DD . "/storage/log";
+    private $log_file;
+
     public function setPath($location) {
         echo $location . "<br />";
     }
 
     public function __construct()
     {
-        echo "Log file Construct! <br/>";
+        if(!file_exists($this->log_file_location . "/access.log")) {
+            $this->log_file = fopen($this->log_file_location . "/access.log", "w");
+        } else {
+            $this->log_file = fopen($this->log_file_location . "/access.log", "a");
+        }
+
     }
 
     public function __destruct()
     {
-        echo "Log file destruct! <br />";
+
     }
 
-    public function write()
+    public function write($key, $value)
     {
-        // TODO: Implement write() method.
-        echo "Write";
+        $txt = $key . "," . $value . "\n";
+        fwrite($this->log_file, $txt);
+        fclose($this->log_file);
+
     }
 
-    public function read()
+    public function read($key)
     {
-        // TODO: Implement read() method.
+        throw new Exception("File Log cannot read with key");
+
     }
 
-    public function contain()
+    public function contain($key)
     {
-        // TODO: Implement contain() method.
+        throw new Exception("File Log cannot read with key");
     }
 
-    public function remove()
+    public function remove($key)
     {
-        // TODO: Implement remove() method.
+        throw new Exception("File Log cannot read with key");
     }
+
+
 }

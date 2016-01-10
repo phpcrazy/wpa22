@@ -9,7 +9,7 @@
 namespace Wpa22\Core;
 
 
-class Application
+class LogFactory
 {
     public function getLog($type = 'file', array $options) {
         $type = strtolower($type);
@@ -35,6 +35,8 @@ class Application
             case 'sqlite':
                 $log->setDBPath($options[0]);
                 break;
+            case 'redis':
+                $log->setPath($options[0]);
         }
         return $log;
     }

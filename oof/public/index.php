@@ -10,19 +10,19 @@ define("DD", realpath( __DIR__ . "/.."));
 require DD . "/vendor/autoload.php";
 
 
-use Wpa22\Core\Application as CoreApp;
+use Wpa22\Core\LogFactory;
 
-$log = new CoreApp();
+$log = new LogFactory();
 
-$mysqllog = $log->getLog('mysql', ["root", "", "another"]);
+$logRedis = $log->getLog("redis", ["test"]);
+$logRedis->write("ygn", "Yangon");
+echo $logRedis->read("ygn");
+$logRedis->write("mdy", "Mandalay");
+echo $logRedis->read("mdy");
 
-$mysqllog->write();
-
-$filelog = $log->getLog("file", ['test']);
-$filelog->write();
-
-
-
+$logFile = $log->getLog("file", ['log']);
+$logFile->write("ygn", "Yangon");
+$logFile->read("ygn");
 
 
 die();

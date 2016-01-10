@@ -8,11 +8,11 @@
 
 interface LogInterface {
 
-    public function write();
+    public function write($key, $value);
 
-    public function read();
+    public function read($key);
 
-    public function contain();
+    public function contain($key);
 
-    public function remove();
+    public function remove($key);
 }
