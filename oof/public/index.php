@@ -15,13 +15,18 @@ use Wpa22\Core\LogFactory;
 $log = new LogFactory();
 
 $logRedis = $log->getLog("redis", ["test"]);
-$logRedis->write("ygn", "Yangon");
+$ygnarray = [
+    'code'  => 'ygn',
+    'name'  => 'Yangon Area',
+    'phone' => '09 5083160'
+];
+$logRedis->write("ygn", serialize($ygnarray));
 echo $logRedis->read("ygn");
 $logRedis->write("mdy", "Mandalay");
 echo $logRedis->read("mdy");
 
 $logFile = $log->getLog("file", ['log']);
-$logFile->write("ygn", "Yangon");
+$logFile->write("ygn", serialize($ygnarray));
 $logFile->read("ygn");
 
 
