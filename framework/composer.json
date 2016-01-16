@@ -1,7 +1,10 @@
 {
     "require": {
         "pimple/pimple": "^3.0",
-        "symfony/http-foundation": "^3.0"
+        "symfony/http-foundation": "^3.0",
+        "illuminate/config": "^5.2",
+        "symfony/http-kernel": "^3.0",
+        "illuminate/database": "^5.2"
     },
     "autoload": {
         "psr-4": {
